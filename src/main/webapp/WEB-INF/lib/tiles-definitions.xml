@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+ 
+<tiles-definitions>
+     <definition name="login" template="WEB-INF/tiles/LoginLayout.jsp">
+     
+         <!-- <put-attribute name="body" value="/WEB-INF/jsp/Login.jsp"/> -->
+         <put-attribute name="body" value="/WEB-INF/jsp/HeliosLogin.jsp"/>
+         <put-attribute name="menu" value="/WEB-INF/tiles/Loginmenu.jsp"/>
+    </definition>
+   <!--  <definition name="cust_profiles" template="WEB-INF/tiles/BasicLayout.jsp">
+         <put-attribute name="body" value="/WEB-INF/jsp/Customer_Info.jsp"/>
+    </definition> -->
+    
+    <definition name="CustProfileOnlineRetail" template="WEB-INF/tiles/BasicLayout.jsp">
+         <put-attribute name="body" value="/WEB-INF/jsp/Cp_Online_Retail.jsp"/>
+    </definition>
+     <definition name="CustProfileOnlineRetailCdm" template="WEB-INF/tiles/BaseCdmToDoList.jsp">
+         <put-attribute name="body" value="/WEB-INF/jsp/Cdm_To_Do_List.jsp"/>
+    </definition> 
+    <definition name="home" template="WEB-INF/tiles/Layout.jsp">
+         <put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
+          <put-attribute name="menu" value="/WEB-INF/tiles/menu.jsp"/>
+         <put-attribute name="body" value="/WEB-INF/tiles/body.jsp"/>
+    </definition>
+    
+    <definition name="TemplateThree" template="WEB-INF/tiles/Layout.jsp">
+         <put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
+          <put-attribute name="menu" value="/WEB-INF/tiles/menuLead.jsp"/>
+         <put-attribute name="body" value="/WEB-INF/tiles/DashboardBody.jsp"/>
+    </definition>
+    
+    <definition name="SAMNewHome" template="WEB-INF/tiles/Layout.jsp">
+         <put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
+          <put-attribute name="menu" value="/WEB-INF/tiles/menuSAMNew.jsp"/>
+         <put-attribute name="body" value="/WEB-INF/tiles/bodySAMNew.jsp"/>
+    </definition>
+    
+    <definition name="accessDenied" template="WEB-INF/tiles/Layout1.jsp">
+         <put-attribute name="body" value="/WEB-INF/jsp/accessDenied.jsp" />
+    </definition>
+    <definition name="recommendation" extends="home">
+         <put-attribute name="body" value="/WEB-INF/jsp/recommendation.jsp"/>
+    </definition>
+    <definition name="recommendationSAMNew" extends="SAMNewHome">
+         <put-attribute name="body" value="/WEB-INF/jsp/recommendationSAMNew.jsp"/>
+    </definition>
+    <definition name="storeLocatorSamNew" extends="SAMNewHome">
+         <put-attribute name="body" value="/WEB-INF/jsp/SamNewStoreLocator.jsp"/>
+    </definition>
+    <definition name="subCallToAction" extends="home">
+         <put-attribute name="body" value="/WEB-INF/jsp/subCallToAction.jsp"/>
+    </definition>
+    <definition name="maintainUserRole" template="WEB-INF/tiles/Layout1.jsp">
+		<put-attribute name="title" value="Maintain User Role" />
+		<put-attribute name="body" value="/WEB-INF/tiles/maintainUserRole.jsp" />
+	</definition>
+	<definition name="hiererchy" template="WEB-INF/tiles/BasicLayout.jsp">
+		 <put-attribute name="body" value="/WEB-INF/jsp/hiererchy.jsp"/>
+	</definition>
+	<definition name="storeLocator" extends="home">
+         <put-attribute name="body" value="/WEB-INF/jsp/storeLocator.jsp"/>
+    </definition>
+    <definition name="onlineRetailRecommendation" extends="TemplateThree">
+         <put-attribute name="body" value="/WEB-INF/jsp/SamRecommendation.jsp"/>
+    </definition>
+    <definition name="storeLocatorSam" extends="TemplateThree">
+         <put-attribute name="body" value="/WEB-INF/jsp/SamStoreLocator.jsp"/>
+    </definition>
+    <definition name="maintainCta" template="WEB-INF/tiles/Layout1.jsp">
+		<put-attribute name="body" value="/WEB-INF/jsp/maintainCta.jsp" />
+	</definition>
+	<definition name="perfDashboard" extends="home">
+         <put-attribute name="body" value="/WEB-INF/jsp/perfDashboard.jsp"/>
+    </definition>
+</tiles-definitions>

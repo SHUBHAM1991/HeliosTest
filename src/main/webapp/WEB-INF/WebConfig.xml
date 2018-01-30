@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<util:map id="appSettings" map-class="java.util.HashMap">
+		<entry key="Header_CriticalUpdFlag" value="n"></entry>
+		<entry key="Header_ChangeInitiator" value="n"></entry>
+<entry key="RollingNumMonth" value="24"></entry>
+<entry key="BaseStartDate" value="1/1/2013" />
+	</util:map>
+
+	<!-- Database Settings -->
+	<util:map id="databaseSettings" map-class="java.util.HashMap">
+		<entry key="dbHost" value="lscsdndbv03.staples.com"></entry>
+		<entry key="dbUserId" value="ORC01_USER"></entry>
+		<entry key="dbPassword" value="D3vus3r"></entry>
+		<entry key="dbPort" value="51521"></entry>
+	</util:map>
+	
+	<!-- Chart Location -->
+	<util:map id="chartSetting" map-class="java.util.HashMap">
+		<!-- <entry key="chartLocation" value="C:/Temp/"></entry>-->
+		<entry key="chartLocation" value="H:\\rajkumar\\appimages\\"></entry> 
+		<entry key="categoryChartFileName" value="2D_pie_"></entry>
+		<entry key="categoryChartFileExtn" value=".png"></entry>
+		<entry key="monthlyChartFileName" value="2D_bar_"></entry>
+		<entry key="monthlyChartFileExtn" value=".png"></entry>
+		<entry key="barCodeFormat" value="Code128"></entry>
+		<entry key="barCodeFileExtn" value=".png"></entry>
+	</util:map>
+
+</beans>

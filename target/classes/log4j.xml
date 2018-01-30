@@ -1,0 +1,118 @@
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="MainLogFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="${catalina.base}/logs/helios/ContractDashboard.log" />
+		<param name="Threshold" value="DEBUG" />
+		<param name="MaxFileSize" value="30MB" />
+		<param name="MaxBackupIndex" value="15" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYY-MM-dd HH:mm:ss:SSS z}| %c{2}| %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="TimingLogFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="${catalina.base}/logs/helios/ContractDashboard.log" />
+		<param name="MaxFileSize" value="30MB" />
+		<param name="MaxBackupIndex" value="20" />
+		<param name="Threshold" value="DEBUG" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYY-MM-dd HH:mm:ss:SSS z}|%c{2}| %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="ReqResLogFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="${catalina.base}/logs/helios/ContractDashboard.log" />
+		<param name="MaxFileSize" value="30MB" />
+		<param name="MaxBackupIndex" value="20" />
+		<param name="Threshold" value="INFO" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYY-MM-dd HH:mm:ss:SSS z}|%c{2}| %m%n" />
+		</layout>
+	</appender>
+	
+	
+	<appender name="UserActivityLogFile" class="org.apache.log4j.DailyMaxRollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/helios/user_metrics.log" />
+		<param name="Append" value="true" />
+	    <param name="Encoding" value="UTF-8" />
+	    <!--  param name="MaxFileSize" value="100KB" /-->
+	    <param name="MaxBackupIndex" value="7" />
+		<param name="threshold" value="TRACE"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+
+     
+	    <layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYY-MM-dd HH:mm:ss:SSS z}| %c{2}| %m%n" />
+			</layout>
+
+	</appender>
+	
+
+	<appender name="PerformanceLogFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="Append" value="true" />
+		<param name="File" value="${catalina.base}/logs/helios/helios_perf.log" />
+		<param name="Threshold" value="DEBUG" />
+		<param name="MaxFileSize" value="30MB" />
+		<param name="MaxBackupIndex" value="15" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYY-MM-dd HH:mm:ss:SSS z}| %c{2}| %m%n" />
+		</layout>
+	</appender>
+	
+	<Logger name="com.staples" level="DEBUG">
+		<AppenderRef ref="MainLogFile" />
+	</Logger>
+
+	<logger name="org.springframework">
+		<level value="off" />
+	</logger>
+
+	<logger name="org.springframework.security">
+		<level value="off" />
+	</logger>
+
+	<logger name="org.thymeleaf">
+		<level value="off" />
+	</logger>
+
+	<logger name="Timing">
+		<level value="DEBUG" />
+		<appender-ref ref="TimingLogFile" />
+	</logger>
+
+	<logger name="ReqRes">
+		<level value="INFO" />
+		<appender-ref ref="ReqResLogFile" />
+	</logger>
+
+	<!-- User Activity Logging Configuration -->
+	<logger name="com.staples.dashboard.app.service.UserActivityServiceImpl" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="UserActivityLogFile" />
+	</logger>
+	
+	<logger name="com.staples.dashboard.app.dao.UserActivityDAOImpl" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="UserActivityLogFile" />
+	</logger>
+	
+	<logger name="com.staples.dashboard.app.controllers.UserActivityController" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="UserActivityLogFile" />
+	</logger>
+	
+	<!-- Performance Logging Configuration -->
+	<logger name="com.staples.dashboard.app.profiler" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="PerformanceLogFile" />
+	</logger>
+	
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="MainLogFile" />
+	</root>
+</log4j:configuration>

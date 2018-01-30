@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd ">
+
+	<!-- Initialization for data source -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@lscsdndbv03.staples.com:51521/CN00040" />
+		<property name="username" value="ORC01_OWN" />
+		<property name="password" value="C0ntractd3v" />
+	</bean>
+
+	<!-- Definition for studentJDBCTemplate bean -->
+	<bean id="customerJDBCTemplate"
+		class="com.staples.dashboard.app.dao.jdbctemplates.ContractDashboardJDBCTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+</beans>

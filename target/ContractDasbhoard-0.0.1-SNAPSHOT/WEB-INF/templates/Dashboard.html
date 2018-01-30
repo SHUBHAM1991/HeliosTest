@@ -1,0 +1,900 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Contract Sales Dashboard</title>
+	<link rel="stylesheet" href="css/rewards.css" />
+</head>
+
+<body id="rewards-ytd-summary">
+		
+
+<div class="stp-Main-Container">
+<form method="POST" th:object="${custNmb}" >
+			<div id="errorDivStyle" style="display: none" th:style="${errorDiv}">
+				<label id="lblErrorMessage" th:text="${errorMessage}"></label>
+			</div>
+			<div>
+				
+				 <label id="lblRwdNum" class="textlabel"
+					for="RewardNumber" 
+					style="width: 210px">Enter Customer Number: </label> <input
+					id="txtRwdNum" type="text" name="custNumber" maxlength="10"
+					tabindex="1" th:field="*{custNum}" style="width: 120px" />
+
+				<button type="submit" name="login" 
+					style="font-size: 16px; width: 120px; background: #B6B6B4">Search
+				</button>
+
+
+			</div>
+			<br /> <br />
+			
+		</form>
+
+   <!-- <section class="stp-Notifications">Notifications go here!</section>-->
+   <section class="stp-Notifications"
+			th:if="${!#strings.isEmpty(message)}">Customer not
+			available / Customer number is invalid</section>
+
+		 <!--   <section class="stp-Notifications"
+			th:if="${!#strings.isEmpty(purchMessage)}">No purchase
+			history available</section>-->
+			
+        	<div class="stp-Container-Row" th:if="${#strings.isEmpty(message)}">
+
+			<!-- Profile Section -->
+			<section class="stp-Grid stp-Grid30" id="stp-Rewards-Account-Profile">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Account-Profile">Account Manager</h4>
+
+					</div>
+
+					<div class="stp-Rewards-Container">
+						<div class="p5">
+						
+							<p>
+								<strong>Your Account Manager</strong><br />
+								<span th:if="${!#strings.isEmpty(customer.firstName)}"
+								th:text="${customer.firstName}" id="stp-Rewards-AcctManager-Name">Carol Jette</span><br />
+								<span th:if="${!#strings.isEmpty(customer.emailId)}"
+								th:text="${customer.emailId}" id="stp-Rewards-AcctManager-Email">carol.jette@staples.com</span><br />
+								<span th:if="${!#strings.isEmpty(customer.phoneNum)}"
+								th:text="${customer.phoneNum}" id="stp-Rewards-AcctManager-Phone">(866) 867-2228 x31384</span>
+							</p>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="stp-Grid stp-Grid33" id="stp-Rewards-Account-Profile">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Account-Profile">CUSTOMER Profile</h4>
+
+					</div>
+
+					<div class="stp-Rewards-Container">
+						<div class="p5">
+							<p>
+								
+								<strong th:if="${!#strings.isEmpty(customer.companyName)}"
+								th:text="${customer.companyName}" id="stp-Rewards-MemberName">Abby Normal</strong><br />
+								<!--  Member since <span id="stp-Rewards-MemberSince">1999</span><br />-->
+								Customer Number:<strong th:if="${!#strings.isEmpty(customer.custNum)}"
+								th:text="${customer.custNum}" id="stp-Rewards-MemberNumber">0495407231</strong><br />
+								Contract Type:<strong th:if="${!#strings.isEmpty(customer.custType)}"
+								th:text="${customer.custType}" id="stp-Rewards-MemberNumber">Link Plus</strong>
+							</p>
+
+						<!--	<p>
+								<strong>Your Account Manager</strong><br />
+								<span th:if="${!#strings.isEmpty(customer.firstName)}"
+								th:text="${customer.firstName}" id="stp-Rewards-AcctManager-Name">Carol Jette</span><br />
+								<span th:if="${!#strings.isEmpty(customer.emailId)}"
+								th:text="${customer.emailId}" id="stp-Rewards-AcctManager-Email">carol.jette@staples.com</span><br />
+								<span th:if="${!#strings.isEmpty(customer.phoneNum)}"
+								th:text="${customer.phoneNum}" id="stp-Rewards-AcctManager-Phone">(866) 867-2228 x31384</span>
+							</p> -->
+ 
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+            <section class="stp-Grid stp-Grid33" id="stp-Rewards-YTD-Summary">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-YTD-Summary">YTD Summary</h4>
+					</div>
+					<div class="stp-Rewards-Container">
+						<div class="p5">
+							<!--  <p>
+								<span class="rewards-date">
+									<span class="from-date">1/1/2014</span>-
+									<span class="to-date">10/26/2014</span>
+								</span>
+							</p> -->
+							
+							<p th:each="ytdInfoVO : ${ytd}">
+									Year-to-Date Spend - <span
+										th:if="${!#strings.isEmpty(ytdInfoVO.year)}"
+										th:text="${ytdInfoVO.year}">Year</span> <br /> <strong th:if="${!#strings.isEmpty(ytdInfoVO.ytdSales)}"
+										th:text="${ytdInfoVO.ytdSales}" class="rewards-price">$1777.65</strong>
+							</p>
+							<!--  <p>
+								<span>Year-to-Date Spend - 2014</span>
+								<br />
+								<strong th:if="${!#strings.isEmpty(ytdInfoVO.ytdSales)}"
+										th:text="${ytdInfoVO.ytdSales}" class="rewards-price">$1777.65</strong>
+							</p>
+							<p>
+								<span>Year-to-Date Spend - 2013</span>
+								<br />
+								<strong class="rewards-price">$1818.98</strong>
+							</p>-->
+
+							<!--  <p><a href="#">View details</a></p>-->
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Redeemables Section -->
+		<!--  	<section class="stp-Grid stp-Grid25" id="stp-Rewards-Redeemables">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Redeemable-Rewards">Super Users</h4>
+					</div>
+
+					<div class="stp-Rewards-Container-Border">
+						<div class="p5">
+							<div id="stp-Rewards-Available-Rewards">
+
+								<div class="stp-Rewards-Available-Rewards-None hide">
+									<p class="stp-No-Rewards-Available">We didn’t find any purchases. Please allow up to 72 hours after a purchase is made for it to show here.</p>
+
+									<p class="stp-No-Rewards-Available">Not sure if you used your Rewards card? Your Rewards Number appears above the first item on your store receipt or in your <a href="#">Staples.com Profile</a>. If you didn’t use your Rewards Number, you can <a href="#">get credit for a missing purchase</a>.</p>
+								</div>
+
+								<div class="stp-Rewards-Available-Rewards-Table">
+									<table class="stp-Rewards-Available-Rewards-List">
+										<tbody>
+										<tr class="stp-Dashed-Bottom">
+                                                <th style="text-align:left">Name</th>
+                                                <th style="text-align:left">No. of Visits</th>
+                                        </tr>
+										<tr class="stp-Dashed-Bottom" th:each="superUserInfoVO : ${superUserInfo}" >
+												<td class="red bold" th:if="${!#strings.isEmpty(superUserInfoVO.orderContact)}"
+										th:text="${superUserInfoVO.orderContact}">Dave List</td>
+												<td class="expires" th:if="${!#strings.isEmpty(superUserInfoVO.numOrders)}"
+										th:text="${superUserInfoVO.numOrders}">03/31/2014</td>
+												
+												
+											</tr>
+											
+											</tbody>
+									</table>
+								</div>
+							</div>
+		
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+			<!-- Quick Links Section -->
+			
+				
+			
+		</div>
+		
+		<!--Container for Super User -->
+<div class="stp-Container-Row" th:if="${#strings.isEmpty(message)}">
+			<section class="stp-Grid stp-Grid100">
+			<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Redeemable-Rewards">Super Users</h4>
+			</div>
+				<table>
+					<tbody>
+						<tr th:each="superUserInfoVO : ${superUserInfoVO}">
+							<td>
+							
+			
+								<div class="stp-Rewards-Purchase-Details-Container clr">
+									<div class="stp-Rewards-Purchase-Details">
+										<a class="stp-Rewards-Accordion-Info-Btn stp-Accordion-Btn"
+											href="#"> <span
+											class="stp-Rewards-Purchase-Details-OrderDate"
+											th:if="${!#strings.isEmpty(superUserInfoVO.orderContact)}"
+										th:text="${superUserInfoVO.orderContact}">11/26/2013</span> <span
+											class="stp-Rewards-Purchase-Details-OrderDate"
+											th:if="${!#strings.isEmpty(superUserInfoVO.numOrders)}"
+										th:text="${'No. Of Orders: ' + superUserInfoVO.numOrders}">Order
+												No. 92453669488</span> <span
+											class="stp-Rewards-Purchase-Details-OrderDate"
+											th:if="${!#strings.isEmpty(superUserInfoVO.totalSales)}"
+										th:text="${'Total Spend: $' + superUserInfoVO.totalSales}">Order
+												No. 92453669488</span> <span
+											class="stp-Rewards-Purchase-Details-OrderDate"
+											th:if="${!#strings.isEmpty(superUserInfoVO.numVisits)}"
+										th:text="${'No. Of Visits: ' + superUserInfoVO.numVisits}">Order
+												No. 92453669488</span><span
+											class="stp-Rewards-Purchase-Details-Total"
+											th:if="${!#strings.isEmpty(superUserInfoVO.visitDate)}"
+										th:text="${'Last Visit Date: ' + superUserInfoVO.visitDate}">11/26/2013</span> 
+												
+										</a>
+										<div class="stp-Accordion-Block">
+										
+										<section class="stp-Grid stp-Grid100" id="Section3">
+										<div class="p5">
+											<h4 class="stp-Header-Icon stp-Header-Redeemable-Rewards">Search String</h4>
+										</div>
+										<div th:if="${#lists.isEmpty(superUserInfoVO.getSearchItemsListVO())}">
+					 						<strong class="red bold">No result found !</strong>
+        								</div>
+        								<div class="p5">
+							<div id="Div1">
+
+								<div class="stp-Rewards-Available-Rewards-Table">
+									<table class="stp-Rewards-Available-Rewards-List">
+										<tbody>
+										
+										<tr class="stp-Dashed-Bottom"	th:each="searchItemsVO : ${superUserInfoVO.getSearchItemsListVO()}">
+														<td class="red bold" th:text="${searchItemsVO.searchItems}">276188</td>
+																																			
+													</tr>
+																										
+											</tbody>
+									</table>
+									
+								</div>
+							</div>
+
+							
+						</div>
+										</section>
+											
+											<section class="stp-Grid stp-Grid33" id="Section3">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Redeemable-Rewards">Abandoned Cart</h4>
+					</div>
+
+					<div >
+						<div th:if="${#lists.isEmpty(superUserInfoVO.getAbandonedCartDtlListVO())}">
+					 		<strong class="red bold">No result found!</strong>
+        				</div>
+						<div class="p5">
+							<div id="Div1">
+
+								<div class="stp-Rewards-Available-Rewards-Table">
+									<table class="stp-Rewards-Available-Rewards-List">
+										<tbody>
+										
+										<tr class="stp-Dashed-Bottom"	th:each="ababdonedCartVO : ${superUserInfoVO.getAbandonedCartDtlListVO()}">
+														<td class="red bold" th:text="${ababdonedCartVO.skuNumber}">276188</td>
+														 <td class="expires" th:text="${ababdonedCartVO.itemDescription}"> 276188
+															- SPECIAL ORDER</td>
+															<td class="expires" th:text="${ababdonedCartVO.actDate}">276188</td>
+																									
+													</tr>
+										
+									<!--  		  <tr class="stp-Dashed-Bottom">
+												<td class="red bold">Manager's Chair</td>
+												<td class="expires">03/31/2014</td>
+												
+												
+											</tr>
+											
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Hard Disk</td>
+												<td class="expires">04/30/2014</td>
+												
+												
+											</tr>-->
+											
+											</tbody>
+									</table>
+									
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+			</section>	
+			
+														<section class="stp-Grid stp-Grid33" id="Section3">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Redeemable-Rewards">Our Recommendations</h4>
+					</div>
+
+					<div>
+						<div th:if="${#lists.isEmpty(superUserInfoVO.getCustRecommendationListVO())}">
+					 		<strong class="red bold">No result found!</strong>
+        				</div>
+						<div class="p5">
+							<div id="Div1">
+
+								<div class="stp-Rewards-Available-Rewards-Table">
+									<table class="stp-Rewards-Available-Rewards-List">
+										<tbody>
+										
+										<tr class="stp-Dashed-Bottom"	th:each="custRecommendationVO : ${superUserInfoVO.getCustRecommendationListVO()}">
+														<td class="red bold" th:text="${custRecommendationVO.skuNumber}">276188</td>
+														 <td class="expires" th:text="${custRecommendationVO.itemDescription}"> 276188
+															- SPECIAL ORDER</td>
+														
+													</tr>
+										
+									<!--  		  <tr class="stp-Dashed-Bottom">
+												<td class="red bold">Manager's Chair</td>
+												<td class="expires">03/31/2014</td>
+												
+												
+											</tr>
+											
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Hard Disk</td>
+												<td class="expires">04/30/2014</td>
+												
+												
+											</tr>-->
+											
+											</tbody>
+									</table>
+									
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+			</section>	
+			
+			<section class="stp-Grid stp-Grid33" id="Section3">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Redeemable-Rewards">DotCom Activity</h4>
+					</div>
+				<div>
+						<div th:if="${#lists.isEmpty(superUserInfoVO.getDotcomActivityVO())}">
+					 		<strong class="red bold">No result found!</strong>
+        				</div>
+						<div class="p5">
+							<div id="Div1">
+
+								<div class="stp-Rewards-Available-Rewards-Table">
+									<table class="stp-Rewards-Available-Rewards-List" >
+										<tbody style="overflow-y:auto">
+										
+										<tr class="stp-Dashed-Bottom"	th:each="dotcomActivityVO : ${superUserInfoVO.getDotcomActivityVO()}">
+														<td class="red bold" th:text="${dotcomActivityVO.skuNumber}">276188</td>
+														 <td class="expires" th:text="${dotcomActivityVO.itemDescription}"> 276188
+															- SPECIAL ORDER</td>
+														<td class="expires" th:text="${dotcomActivityVO.actDate}"> 276188
+															- SPECIAL ORDER</td>	
+														
+													</tr>
+										
+									<!--  		  <tr class="stp-Dashed-Bottom">
+												<td class="red bold">Manager's Chair</td>
+												<td class="expires">03/31/2014</td>
+												
+												
+											</tr>
+											
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Hard Disk</td>
+												<td class="expires">04/30/2014</td>
+												
+												
+											</tr>-->
+											
+											</tbody>
+									</table>
+									
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+			</section>	
+
+
+
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			<p th:if="${noInfo== 'N'}">
+						We didn't find any information. <br />
+					</p>
+									
+			</section>
+		</div>
+		<!--Container for Super User  -->
+
+<form id="stp-Rewards-Member-Filter-Form" action="#" method="post" >
+	<section class="stp-Grid stp-Grid100" th:if="${#strings.isEmpty(message)}">   
+	<h3>Your Orders</h3>
+     		
+    	<div class="stp-Rewards-Member-Filter-Form"  th:object="${purchaseDetailsSelectedVO}">
+    				<fieldset class="stp-Table-Left-Filters p5">
+						<label for="stp-Filter-Locations">View:</label> <select class=""
+							id="selectedMonthYear" name="selectedMonthYear"
+							th:field="${purchaseDetailsSelectedVO.selectedMonthYear}" onchange="this.form.submit()">
+							<option th:each="monYear: ${monYearList}"
+								th:value="${monYear.key}" th:text="${monYear.value}"></option>
+						</select><label for="stp-Filter-Locations">Sort By:</label> <select id="stp-Filter-Purchases" class=""
+							th:field="${purchaseDetailsSelectedVO.selectedCategory}" onchange="this.form.submit()"
+							name="stp-Filter-Purchases"><option selected="selected"
+								value="ALL">All Purchases</option>
+							<option th:each="categoryVO : ${categoryListVO}"
+								th:value="${categoryVO.mktItmCatCd}"
+								th:text="${categoryVO.name}">2014</option>
+						</select> <!--  <a href="javascript:clearAll();"
+							class="stp-Button stp-Grey-Button">Clear</a>--> <a
+							class="stp-Button stp-Grey-Button stp-Rewards-Collapse-Btn">Collapse
+							All</a> <a class="stp-Button stp-Grey-Button stp-Rewards-Expand-Btn">Expand
+							All</a>
+					</fieldset>
+		</div>
+			<p th:if="${!#strings.isEmpty(purchMessage)}" class="stp-Notifications">
+						We didn't find any purchases for the month. <br />
+					</p>
+</section>
+</form>
+
+
+
+<div class="stp-Container-Row"
+			th:object="${purchaseDetailsSelectedVO}"
+			th:if="${#strings.isEmpty(purchMessage)}">
+			<section class="stp-Grid stp-Grid100">
+			
+				<table>
+					<tbody>
+						<tr th:each="purchaseDetailsVO : ${purchaseDetailsVO}">
+							<td>
+								<div class="stp-Rewards-Purchase-Details-Container clr">
+									<div class="stp-Rewards-Purchase-Details">
+										<a class="stp-Rewards-Accordion-Info-Btn stp-Accordion-Btn"
+											href="#"> <span
+											class="stp-Rewards-Purchase-Details-OrderDate"
+											th:text="${purchaseDetailsVO.tranDate}">11/26/2013</span> <span
+											class="stp-Rewards-Purchase-Details-OrderNum"
+											th:if="${purchaseDetailsVO.orderNumber != '0'}"
+											th:text="${'Order No. ' + purchaseDetailsVO.orderNumber}">Order
+												No. 92453669488</span> <span
+											th:if="${purchaseDetailsVO.orderNumber == '0'}"
+											class="stp-Rewards-Purchase-Details-OrderNum"
+											th:text="${'Trans No. ' + purchaseDetailsVO.tranId}">Order
+												No. 92453669488</span> <span
+											class="stp-Rewards-Purchase-Details-OrderNum"
+											th:text="${customer.custNum}">Order No. 92453669488</span> <span
+											th:if="${categoryFilter == 'OFF'}"
+											class="stp-Rewards-Purchase-Details-Total"
+											th:text="${'Total: $'+purchaseDetailsVO.netSpendAmount}">Total:
+												$349.99</span>
+										</a>
+										<div class="stp-Accordion-Block">
+											<table class="stp-Rewards-Purchase-Details-Info">
+												<thead>
+													<tr>
+														<td></td>
+														<td>Item No.</td>
+														<td>Item Description</td>
+														<td>Qty.</td>
+														<td>Price</td>
+														<td>Coupons</td>
+														<td>Total Spend</td>
+													</tr>
+												</thead>
+												<tbody>
+
+													<tr
+														th:each="purchaseRewardsDetailsVO : ${purchaseDetailsVO.purchRwdsDtlListVO}">
+														<!-- <td
+																th:if="${purchaseRewardsDetailsVO.src != null or purchaseRewardsDetailsVO.src !='NA'}"><img
+																th:src="@{/}+'img/'+${purchaseRewardsDetailsVO.src}"></img></td>
+															 -->
+														<td th:switch="${purchaseRewardsDetailsVO.src}">
+															<p th:case="null"></p>
+															<p th:case="*">
+																<img
+																	th:src="@{/}+'img/'+${purchaseRewardsDetailsVO.src}"></img>
+															</p>
+														</td>
+
+														<td th:text="${purchaseRewardsDetailsVO.skuNumber}">276188</td>
+														<td th:text="${purchaseRewardsDetailsVO.itemDescription}">276188
+															- SPECIAL ORDER</td>
+														<td th:text="${purchaseRewardsDetailsVO.totalQty}">1</td>
+														<td th:text="${purchaseRewardsDetailsVO.totalPriceAmount}">$349.99</td>
+														<td th:text="${purchaseRewardsDetailsVO.couponAmount}">$0.00</td>
+														<td th:text="${purchaseRewardsDetailsVO.netSpendAmount}">$349.00</td>
+													</tr>
+
+												</tbody>
+											</table>
+								
+												
+
+
+
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			
+				<p th:if="${noSales== 'N'}">
+						We didn't find any purchases. <br />
+					</p>
+					
+			</section>
+		</div>
+		
+		
+
+<!-- <div class="stp-Container-Row">
+<section class="stp-Grid stp-Grid100" id="stp-Rewards-Table">
+
+<div class="stp-Rewards-Purchase-Details-Container clr">
+	<div class="stp-Rewards-Purchase-Details">
+	<a class="stp-Rewards-Accordion-Info-Btn stp-Accordion-Btn" href="#">
+		<span class="stp-Rewards-Purchase-Details-OrderDate">11/26/2013</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum">Order No. 92453669488</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum2">001608975</span>
+		<span class="stp-Rewards-Purchase-Details-Total">Total: $349.99</span>
+		
+	</a>
+	<div class="stp-Accordion-Block">
+		<table class="stp-Rewards-Purchase-Details-Info">
+		<thead>
+			<tr>
+				<td>Item No.</td>
+				<td>Item Description</td>
+				<td>Qty.</td>
+				<td>Price</td>
+				<td>Coupons</td>
+				<td>Total Spend</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>276188</td>
+				<td>276188 - SPECIAL ORDER</td>
+				<td>1</td>
+				<td>$349.99</td>
+				<td>$0.00</td>
+				<td>$349.00</td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+	</div>
+
+	<div class="stp-Rewards-Purchase-Details">
+	<a class="stp-Rewards-Accordion-Info-Btn stp-Accordion-Btn" href="#">
+		<span class="stp-Rewards-Purchase-Details-OrderDate">11/26/2013</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum">Order No. 92453669488</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum2">001608975</span>
+		<span class="stp-Rewards-Purchase-Details-Total">Total: $349.99</span>
+	</a>
+	<div class="stp-Accordion-Block">
+		<table class="stp-Rewards-Purchase-Details-Info">
+		<thead>
+			<tr>
+				<td>Item No.</td>
+				<td>Item Description</td>
+				<td>Qty.</td>
+				<td>Price</td>
+				<td>Coupons</td>
+				<td>Total Spend</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>276188</td>
+				<td>276188 - SPECIAL ORDER</td>
+				<td>1</td>
+				<td>$349.99</td>
+				<td>$0.00</td>
+				<td>$349.00</td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+	</div>
+
+	<div class="stp-Rewards-Purchase-Details">
+        
+	<a class="stp-Rewards-Accordion-Info-Btn stp-Accordion-Btn" href="#">
+		<span class="stp-Rewards-Purchase-Details-OrderDate">11/26/2013</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum">Order No. 92453669488</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum2">001608975</span>
+		<span class="stp-Rewards-Purchase-Details-Total">Total: $349.99</span>
+	</a>
+	<div class="stp-Accordion-Block">
+		<table class="stp-Rewards-Purchase-Details-Info">
+		<thead>
+			<tr>
+				<td>Item No.</td>
+				<td>Item Description</td>
+				<td>Qty.</td>
+				<td>Price</td>
+				<td>Coupons</td>
+				<td>Total Spend</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>276188</td>
+				<td>276188 - SPECIAL ORDER</td>
+				<td>1</td>
+				<td>$349.99</td>
+				<td>$0.00</td>
+				<td>$349.00</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	</div>
+</div>
+
+
+</section>
+
+
+</div>-->
+
+    <div class="stp-Container-Row mt10">
+<section class="stp-Grid stp-Grid100" id="stp-Rewards-Spend" th:if="${#strings.isEmpty(message)}">
+<h3>Year-to-Date Spend</h3>
+<!--  <p class="grey">From <span class="stp-Rewards-Last-Updated">1/1/2013 - 12/31/2013</span></p>-->
+<form method="post"  id="stp-Filters-Form">
+<fieldset class="stp-Table-Left-Filters">
+		<label for="stp-Filter-By">View:</label>
+		<select class="" id="stp-Filter-By" name="stp-Filter-By" th:field="${yTDSummaryVO.selectedYear}" >
+							<option th:each="year : ${yTDSummaryVO.listYear}"
+								th:value="${year.key}" th:text="${year.key}">2014</option>
+		</select>
+	</fieldset>
+</form>
+<div class="stp-Rewards-Summary-Graph-Container" th:if="${yTDSummaryVO.chartDisplay == 'Y' }">
+<div class="stp-Grid stp-Grid50 center">
+<img src="img/ChartImg.png" th:src="@{/} + 'RenderImage/' +${yTDSummaryVO.categoryChartName}"/>
+</div>
+<div class="stp-Grid stp-Grid50 center">
+<img src="img/ChartImg-Graph.png" th:src="@{/} + 'RenderImage/' +${yTDSummaryVO.monthChartName}"/>
+</div>
+</div>
+
+<table class="stp-Rewards-Table stp-Rewards-Solid">
+<thead>
+							<tr>
+								<td class="center" th:each="row : ${yTDSummaryVO.listHeader}" th:utext="${row}">
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="listYTDSpend : ${yTDSummaryVO.listYTDSpend}">
+								<td class="center" th:each="row,rowStat : ${listYTDSpend.data}" th:utext="${row}">
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td class="center">Total</td>
+								<td class="center red"
+									th:each="row : ${yTDSummaryVO.listFooter}" th:utext="${row}">
+								</td>
+							</tr>
+						</tfoot>
+<!--  <thead>
+	<tr>
+		<td>Ink &amp; Toner</td>
+		<td class="center">Case &amp; Ream Paper</td>
+		<td class="center">Copy &amp; Print Center</td>
+		<td class="center">Cleaning &amp; Breakroom</td>
+		<td class="center">Technology</td>
+		<td class="center">Furniture</td>
+		<td class="center">All Other Products</td>
+		<td class="center">Total</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>January</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>February</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>March</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>April</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>May</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>June</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>July</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>August</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>September</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>October</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>November</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>December</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+</tbody>
+<tfoot>
+	<tr>
+		<td>Total</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+</tfoot> -->
+</table>
+</section>
+</div>
+
+
+    	<div class="stp-Container-Row">
+
+
+            
+			<!-- Redeemables Section -->
+			
+
+			<!-- Quick Links Section -->
+			
+				
+			
+		</div>
+
+</div>
+
+
+<!-- <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/rewards.js"></script> -->
+
+
+	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"
+		th:src="@{/js/jquery-1.7.1.min.js}"></script>
+	<script type="text/javascript" src="/js/rewards.js"
+		th:src="@{/js/rewards.js}"></script>
+	<script type="text/javascript"
+		src="/js/RewardsDashboard/purchasedetails.js"
+		th:src="@{/js/RewardsDashboard/purchasedetails.js}"></script>
+<script>
+	$(function() {
+		$("#stp-Filter-By").change(function() {
+			$("#stp-Filters-Form").submit();
+		});
+	})
+	</script>
+
+</body>
+</html>

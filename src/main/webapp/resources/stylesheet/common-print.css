@@ -1,0 +1,266 @@
+div.amcharts-chart-div svg {
+	overflow: visible;
+}
+
+#mtaContent .table thead tr th , #samMtaContent .table tbody tr th{
+	font-size: 12px !important;
+}
+
+/*
+#mtaContent .table-striped>tbody>tr:nth-of-type(odd) {
+	font-size: 10px !important;
+}
+
+#mtaContent .table-striped>tbody>tr:nth-of-type(even) {
+	font-size: 10px !important;
+}
+*/
+
+#mtaContent .table tbody tr td , #samMtaContent .table tbody tr td{
+	font-size: 10px !important;
+}
+
+
+#cpId {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+
+#cpIdSam{
+	break-inside: avoid;
+	page-break-inside: avoid;
+	height:260px;
+}
+#catId {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+
+#amId {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+
+#saId ,#catPenId {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+
+
+#ytId , #savingId {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+
+#mnthId {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+thead {
+    display: table-row-group;
+}
+#mtaId {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+
+#filterByPlay {
+	float: left;
+}
+
+#playSecId {
+	float: left;
+}
+
+.dataTable_wrapper .dataTables_wrapper .row .col-sm-6 {
+	float: left;
+}
+
+#viewWrapper {
+	float: left;
+}
+
+#viewWrapper div {
+	float: left;
+}
+
+#filterByWrapper {
+	float: left;
+}
+
+#filterByWrapper div {
+	float: left;
+}
+
+#filterByDays {
+	clear: both;
+}
+
+#filterByDays div {
+	float: left;
+}
+
+div.amcharts-chart-div a{
+   display:none !important;
+}
+div#printOnly {
+   display : none;
+}
+
+@media print {
+    div#printOnly {
+       display : block;
+    }
+    
+}
+@media (max-width: 900px) {
+	div#super-info-content {
+		width: 900px;
+		transform: scale(calc(600px/900px, 600px/900px));
+		-ms-transform: scale(calc(600px/900px, 600px/900px));
+		-webkit-transform: scale(calc(600px/900px, 600px/900px));
+		-o-transform-origin: scale(calc(600px/900px, 600px/900px));
+		-moz-transform-origin: scale(calc(600px/900px, 600px/900px));
+	}
+}
+
+@media (max-width: 1024px) {	
+	div#recommendations-page-content  {
+		width: 1024px;
+		transform: scale(calc(600px/1024px, 600px/1024px));
+		-ms-transform: scale(calc(600px/1024px, 600px/1024px));
+		-webkit-transform: scale(calc(600px/1024px, 600px/1024px));
+		-o-transform-origin: scale(calc(600px/1024px, 600px/1024px));
+		-moz-transform-origin: scale(calc(600px/1024px, 600px/1024px));
+	}
+}
+
+div#recommendations-page-content a[href]:after {
+    content: none !important;
+  }
+  
+div#recommendations-page-content .row {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+
+div#cpContent {
+      height: 150px !important;
+}
+
+div#cpContent * {
+      width: auto !important;
+      text-align: left !important;
+}
+
+div#cpAddressContent, div#cpInfoContent {
+      clear: both;
+}
+
+
+@media print {
+	body {-webkit-print-color-adjust: exact;}
+#reorderPane{
+	page-break-before:avoid; 
+	  width:110%; 
+	 zoom:85%;
+}
+.online-retails-reco-row{
+	font-size:14px;
+	font-weight:noemal !important;
+}	
+    .retailCls{
+    color:#fff !important;
+    background-color: #598b9a !important;
+    -webkit-print-color-adjust: exact;
+    }
+    .onlineCls{
+    color:#fff !important;
+    background-color: #808080 !important;
+    -webkit-print-color-adjust: exact;
+    }
+    td.retailCls{
+    color:#fff !important;
+    background-color: #598b9a !important;
+    -webkit-print-color-adjust: exact;
+    }
+    td.onlineCls{
+    color:#fff !important;
+    background-color: #808080 !important;
+    -webkit-print-color-adjust: exact;
+    }
+    .midrow{
+    background-color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    }
+    
+i.supplyColor {
+	font-size:0% !important;
+	padding:1px 0px 0px 15px !important;
+	color:#dd1d1d !important;
+    background-color: #dd1d1d !important;
+    -webkit-print-color-adjust: exact; 
+}
+i.inkColor {
+	font-size:0% !important;
+	padding:1px 0px 0px 15px !important;
+	color:#52c5d0 !important;
+    background-color: #52c5d0 !important;
+    -webkit-print-color-adjust: exact; 
+}
+i.facilityColor {
+	font-size:0% !important;
+	padding:1px 0px 0px 15px !important;
+	color:#2d435e !important;
+    background-color: #2d435e !important;
+    -webkit-print-color-adjust: exact; 
+}
+i.paperColor {
+	font-size:0% !important;
+	padding:1px 0px 0px 15px !important;
+	color:#ff9a2c !important;
+    background-color: #ff9a2c !important;
+    -webkit-print-color-adjust: exact; 
+}
+i.techColor {
+	font-size:0% !important;
+	padding:1px 0px 0px 15px !important;
+	color:#fcd78d !important;
+    background-color: #fcd78d !important;
+    -webkit-print-color-adjust: exact; 
+}
+i.furColor {
+	font-size:0% !important;
+	padding:1px 0px 0px 15px !important;
+	color:#9ce2cf !important;
+    background-color: #9ce2cf !important;
+    -webkit-print-color-adjust: exact; 
+}
+i.mailColor {
+	font-size:0% !important;
+	padding:1px 0px 0px 15px !important;
+	color:#c8cbd0 !important;
+    background-color: #c8cbd0 !important;
+    -webkit-print-color-adjust: exact; 
+}
+
+}
+@page{margin:.5cm}
+
+#rewardsId , #hk_sec1 ,#hk_sec2{
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+#hk_sec1 > div ,#hk_sec1 > div + div , #hk_sec1 > div + div +div, #mnthId ,#samMtaId {
+	width:100%;
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+#Hk_Id {
+	break-inside: avoid;
+	/* page-break-inside: avoid; */
+	height:950px;
+	
+}
+
+

@@ -1,0 +1,542 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Staples Rewards - Purchase Details</title>
+	<link rel="stylesheet" href="css/rewards.css" />
+</head>
+
+<body id="rewards-ytd-summary">
+<div class="stp-Main-Container">
+
+   <!-- <section class="stp-Notifications">Notifications go here!</section>-->
+        	<div class="stp-Container-Row">
+
+			<!-- Profile Section -->
+			<section class="stp-Grid stp-Grid25" id="stp-Rewards-Account-Profile">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Account-Profile">CUSTOMER Profile</h4>
+
+					</div>
+
+					<div class="stp-Rewards-Container">
+						<div class="p5">
+							<p>
+								
+								<strong id="stp-Rewards-MemberName">Abby Normal</strong><br />
+								Member since <span id="stp-Rewards-MemberSince">1999</span><br />
+								Rewards Number:<strong id="stp-Rewards-MemberNumber">0495407231</strong>
+							</p>
+
+							<p>
+								<strong>Your Account Manager</strong><br />
+								<span id="stp-Rewards-AcctManager-Name">Carol Jette</span><br />
+								<span id="stp-Rewards-AcctManager-Email">carol.jette@staples.com</span><br />
+								<span id="stp-Rewards-AcctManager-Phone">(866) 867-2228 x31384</span>
+							</p>
+
+							<p class="margin"><a href="#" id="stp-Rewards-Profile-Link">View rewards account profile</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+            <section class="stp-Grid stp-Grid25" id="stp-Rewards-YTD-Summary">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-YTD-Summary">YTD Summary</h4>
+					</div>
+					<div class="stp-Rewards-Container">
+						<div class="p5">
+							<p>
+								<span class="rewards-date">
+									<span class="from-date">1/1/2014</span>-
+									<span class="to-date">6/30/2014</span>
+								</span>
+							</p>
+							<p>
+								<span>Year-to-Date Spend - 2014</span>
+								<br />
+								<strong class="rewards-price">$1777.65</strong>
+							</p>
+							<p>
+								<span>Year-to-Date Spend - 2013</span>
+								<br />
+								<strong class="rewards-price">$1818.98</strong>
+							</p>
+
+							<p><a href="#">View details</a></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Redeemables Section -->
+			<section class="stp-Grid stp-Grid50" id="stp-Rewards-Redeemables">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Redeemable-Rewards">Super Users</h4>
+					</div>
+
+					<div class="stp-Rewards-Container-Border">
+						<div class="p5">
+							<div id="stp-Rewards-Available-Rewards">
+
+								<div class="stp-Rewards-Available-Rewards-None hide">
+									<p class="stp-No-Rewards-Available">We didn’t find any purchases. Please allow up to 72 hours after a purchase is made for it to show here.</p>
+
+									<p class="stp-No-Rewards-Available">Not sure if you used your Rewards card? Your Rewards Number appears above the first item on your store receipt or in your <a href="#">Staples.com Profile</a>. If you didn’t use your Rewards Number, you can <a href="#">get credit for a missing purchase</a>.</p>
+								</div>
+
+								<div class="stp-Rewards-Available-Rewards-Table">
+									<table class="stp-Rewards-Available-Rewards-List">
+										<tbody>
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Dave List</td>
+												<td class="expires">03/31/2014</td>
+												
+												<td class="right td20"><a href="#" class="stp-Button stp-Red-Button">View Details</a></td>
+											</tr>
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Amy Cohn</td>
+												<td class="expires">04/30/2014</td>
+												
+												<td class="right td20"><a href="#" class="stp-Button stp-Red-Button">View Details</a>
+												</td>
+											</tr>
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Adam Ellis</td>
+												<td class="expires">05/31/2014</td>
+												
+												
+												<td class="right td20"><a href="#" class="stp-Button stp-Red-Button">View Details</a></td>
+											</tr>
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Linda Smith
+												</td>
+												<td class="expires">06/30/2014</td>
+												<td class="right td20"><a href="#" class="stp-Button stp-Red-Button">View Details</a></td>
+											</tr>
+									</table>
+									<p><a href="#" id="stp-Rewards-Available-Rewards-Link">View all</a>
+									</p>
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Quick Links Section -->
+			
+				
+			
+		</div>
+
+
+<section class="stp-Grid stp-Grid100">
+<form id="stp-Rewards-Member-Filter-Form" action="#" method="post">
+    <h3>Your Orders</h3>
+<fieldset>
+<label for="stp-Rewards-Member-Filter-Form-Date">View:</label>
+<select id="stp-Rewards-Member-Filter-Form-Date" name="stp-Rewards-Member-FIlter-Form-Date">
+	<option>November 2013</option>
+</select>
+<label for="stp-Rewards-Member-Filter-Form-Sort">Sort By:</label>
+<select id="stp-Rewards-Member-Filter-Form-Sort" name="stp-Rewards-Member-Filter-Form-Sort">
+	<option>All Members</option>
+</select>
+		<select class="" id="stp-Filter-Locations" name="stp-Filter-Locations">
+			<option>All Locations</option>
+			<option>Online</option>
+			<option>Phone</option>
+			<option>Store</option>
+		</select><select class="" id="stp-Filter-Purchases" name="stp-Filter-Purchases">
+			<option selected="selected" value="ALL">All Purchases</option>
+			<option value="1__NA">Ink and Toner</option>
+			<option value="2__NA">Paper (Cases and Reams)</option>
+			<option value="3__NA">Copy and Print Center</option>
+			<option value="9__!1">Bonus Savings Events</option>
+			<option value="10,11__NA">Ink Recycling</option>
+			<option value="4__NA">Cleaning and Breakroom</option>
+			<option value="7__NA">Furniture</option>
+			<option value="12__NA">Mailing and Shipping Supplies</option>
+			<option value="6__NA">Technology</option>
+			<option value="13__NA">Warranty and Service Plans</option>
+			<option value="9__1">All Other Products</option>
+		</select><input type="button" class="stp-Button stp-Grey-Button" value="Clear All" id="stp-PurchaseDetails-Clear-All-Btn" />
+    <a href="#" class="stp-Button stp-Grey-Button stp-Rewards-Collapse-Btn">Collapse All</a>
+		<a href="#" class="stp-Button stp-Grey-Button stp-Rewards-Expand-Btn">Expand All</a>
+
+</fieldset>
+</form>
+</section>
+
+
+
+<div class="stp-Container-Row">
+<section class="stp-Grid stp-Grid100" id="stp-Rewards-Table">
+
+<div class="stp-Rewards-Purchase-Details-Container clr">
+	<div class="stp-Rewards-Purchase-Details">
+	<a class="stp-Rewards-Accordion-Info-Btn stp-Accordion-Btn" href="#">
+		<span class="stp-Rewards-Purchase-Details-OrderDate">11/26/2013</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum">Order No. 92453669488</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum2">001608975</span>
+		<span class="stp-Rewards-Purchase-Details-Total">Total: $349.99</span>
+		
+	</a>
+	<div class="stp-Accordion-Block">
+		<table class="stp-Rewards-Purchase-Details-Info">
+		<thead>
+			<tr>
+				<td>Item No.</td>
+				<td>Item Description</td>
+				<td>Qty.</td>
+				<td>Price</td>
+				<td>Coupons</td>
+				<td>Total Spend</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>276188</td>
+				<td>276188 - SPECIAL ORDER</td>
+				<td>1</td>
+				<td>$349.99</td>
+				<td>$0.00</td>
+				<td>$349.00</td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+	</div>
+
+	<div class="stp-Rewards-Purchase-Details">
+	<a class="stp-Rewards-Accordion-Info-Btn stp-Accordion-Btn" href="#">
+		<span class="stp-Rewards-Purchase-Details-OrderDate">11/26/2013</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum">Order No. 92453669488</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum2">001608975</span>
+		<span class="stp-Rewards-Purchase-Details-Total">Total: $349.99</span>
+	</a>
+	<div class="stp-Accordion-Block">
+		<table class="stp-Rewards-Purchase-Details-Info">
+		<thead>
+			<tr>
+				<td>Item No.</td>
+				<td>Item Description</td>
+				<td>Qty.</td>
+				<td>Price</td>
+				<td>Coupons</td>
+				<td>Total Spend</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>276188</td>
+				<td>276188 - SPECIAL ORDER</td>
+				<td>1</td>
+				<td>$349.99</td>
+				<td>$0.00</td>
+				<td>$349.00</td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+	</div>
+
+	<div class="stp-Rewards-Purchase-Details">
+        
+	<a class="stp-Rewards-Accordion-Info-Btn stp-Accordion-Btn" href="#">
+		<span class="stp-Rewards-Purchase-Details-OrderDate">11/26/2013</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum">Order No. 92453669488</span>
+		<span class="stp-Rewards-Purchase-Details-OrderNum2">001608975</span>
+		<span class="stp-Rewards-Purchase-Details-Total">Total: $349.99</span>
+	</a>
+	<div class="stp-Accordion-Block">
+		<table class="stp-Rewards-Purchase-Details-Info">
+		<thead>
+			<tr>
+				<td>Item No.</td>
+				<td>Item Description</td>
+				<td>Qty.</td>
+				<td>Price</td>
+				<td>Coupons</td>
+				<td>Total Spend</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>276188</td>
+				<td>276188 - SPECIAL ORDER</td>
+				<td>1</td>
+				<td>$349.99</td>
+				<td>$0.00</td>
+				<td>$349.00</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	</div>
+</div>
+
+
+</section>
+
+
+</div>
+
+    <div class="stp-Container-Row mt10">
+<section class="stp-Grid stp-Grid100" id="stp-Rewards-Spend">
+<h3>Year-to-Date Spend</h3>
+<p class="grey">From <span class="stp-Rewards-Last-Updated">1/1/2013 - 12/31/2013</span></p>
+<fieldset class="stp-Table-Left-Filters">
+		<label for="stp-Filter-By">View:</label>
+		<select class="" id="stp-Filter-By" name="stp-Filter-By">
+			<option>2013</option>
+			<option>2012</option>
+			<option>2011</option>
+		</select>
+	</fieldset>
+	<fieldset class="stp-Table-Right-Filters">
+	</fieldset>
+<div class="stp-Rewards-Summary-Graph-Container">
+<div class="stp-Grid stp-Grid50 center">
+<img src="img/ChartImg.png" />
+</div>
+<div class="stp-Grid stp-Grid50 center">
+<img src="img/ChartImg-Graph.png" />
+</div>
+</div>
+
+<table class="stp-Rewards-Table stp-Rewards-Solid">
+<thead>
+	<tr>
+		<td>Ink &amp; Toner</td>
+		<td class="center">Case &amp; Ream Paper</td>
+		<td class="center">Copy &amp; Print Center</td>
+		<td class="center">Cleaning &amp; Breakroom</td>
+		<td class="center">Technology</td>
+		<td class="center">Furniture</td>
+		<td class="center">All Other Products</td>
+		<td class="center">Total</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>January</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>February</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>March</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>April</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>May</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>June</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>July</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>August</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>September</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>October</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>November</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+	<tr>
+		<td>December</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+</tbody>
+<tfoot>
+	<tr>
+		<td>Total</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+		<td class="center red">$0.00</td>
+	</tr>
+</tfoot>
+</table>
+</section>
+</div>
+
+
+    	<div class="stp-Container-Row">
+
+
+            
+			<!-- Redeemables Section -->
+			<section class="stp-Grid stp-Grid50" id="Section3">
+				<div class="p5">
+					<div class="p5">
+						<h4 class="stp-Header-Icon stp-Header-Redeemable-Rewards">Abandoned Cart</h4>
+					</div>
+
+					<div class="stp-Rewards-Container-Border">
+						<div class="p5">
+							<div id="Div1">
+
+								<div class="stp-Rewards-Available-Rewards-None hide">
+									<p class="stp-No-Rewards-Available">We didn’t find any purchases. Please allow up to 72 hours after a purchase is made for it to show here.</p>
+
+									<p class="stp-No-Rewards-Available">Not sure if you used your Rewards card? Your Rewards Number appears above the first item on your store receipt or in your <a href="#">Staples.com Profile</a>. If you didn’t use your Rewards Number, you can <a href="#">get credit for a missing purchase</a>.</p>
+								</div>
+
+								<div class="stp-Rewards-Available-Rewards-Table">
+									<table class="stp-Rewards-Available-Rewards-List">
+										<tbody>
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Manager's Chair</td>
+												<td class="expires">03/31/2014</td>
+												
+												<td class="right td20"><a href="#" class="stp-Button stp-Red-Button">View Details</a></td>
+											</tr>
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Hard Disk</span></td>
+												<td class="expires">04/30/2014</td>
+												
+												<td class="right td20"><a href="#" class="stp-Button stp-Red-Button">View Details</a>
+												</td>
+											</tr>
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Coffee Maker</span></td>
+												<td class="expires">05/31/2014</td>
+												
+												</td>
+												<td class="right td20"><a href="#" class="stp-Button stp-Red-Button">View Details</a></td>
+											</tr>
+											<tr class="stp-Dashed-Bottom">
+												<td class="red bold">Ink Cartridge</span>
+												</td>
+												<td class="expires">06/30/2014</td>
+												<td class="right td20"><a href="#" class="stp-Button stp-Red-Button">View Details</a></td>
+											</tr>
+									</table>
+									
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Quick Links Section -->
+			
+				
+			
+		</div>
+
+
+</div>
+
+<!-- <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script> -->
+<script type="text/javascript" src="js/rewards.js"></script>
+
+</body>
+</html>

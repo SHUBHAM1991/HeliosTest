@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.staples.dashboard" />
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	
+	
+	<!-- <context:component-scan base-package="com.staples.dashboard.app.presentation.interceptor" 
+		/> -->
+
+	<!-- <mvc:interceptors> <bean class="com.staples.dashboard.app.interceptor.MasterModelInterceptor" 
+		/> </mvc:interceptors> -->
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/js/**" location="/resources/js/" />
+	<mvc:resources mapping="/css/**" location="/resources/css/" />
+	<mvc:resources mapping="/img/**" location="/resources/img/" />
+
+
+	<!-- Message externalization/internationalization: Standard Spring MessageSource 
+		implementation <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"> 
+		<property name="basenames"> <list> <value>Messages</value> <value>Static_URLs</value> 
+		</list> </property> </bean> -->
+
+
+	<!-- THYMELEAF Template resolves views selected for rendering by @Controllers 
+		to .html resources in the /WEB-INF/templates directory -->
+		
+	<!-- Thyme Resolver Start -->
+	
+	<bean id="webTemplateResolver"
+		class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
+		<property name="prefix" value="/WEB-INF/templates/" />
+		<property name="suffix" value=".html" />
+		<property name="templateMode" value="HTML5" />
+		<property name="cacheable" value="false" />
+	</bean>
+
+	<!-- THYMELEAF: Template Engine (Spring3-specific version) -->
+	<bean id="templateEngine" class="org.thymeleaf.spring3.SpringTemplateEngine">
+		<property name="templateResolvers" ref="webTemplateResolver" />
+		<property name="additionalDialects">
+			<set>
+				<bean class="org.thymeleaf.spring3.dialect.SpringStandardDialect" />
+				<bean class="net.sourceforge.pagesdialect.PagesDialect" />
+			</set>
+		</property>
+	</bean>
+
+	<!-- Resolves view names returned by Controllers as names of Tiles definitions 
+		ThymeleafTilesView -->
+	<!-- <bean id="viewResolver1" class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
+		<property name="templateEngine" ref="templateEngine" />
+		<property name="characterEncoding" value="UTF-8" />
+	</bean> -->
+	
+	<!-- Thyme Resolver End -->
+	
+	  <!-- Lomesh changes Start-->
+	  <bean id="viewResolver1" class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="order" value="1"/>
+        <property name="location" value="/WEB-INF/ReportViews.xml"/>
+    </bean>
+	  
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    <property name="order" value="2"/>
+    <property name="viewClass">
+        <value>
+            org.springframework.web.servlet.view.tiles3.TilesView
+        </value>
+    </property>
+</bean>
+<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+    <property name="definitions">
+        <list>
+            <value>/WEB-INF/lib/tiles-definitions.xml</value>
+        </list>
+    </property>
+</bean>  
+
+  <!-- Lomesh Changes End -->
+	
+	<!-- Email Sender -->
+	<context:component-scan base-package="com.staples.dashboard.app.utilities" />
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+        <list>
+        <value>classpath:SmtpMail.properties</value>
+        <value>classpath:db.properties</value>
+        <value>classpath:ldap.properties</value>
+        <value>classpath:store-locator-service.properties</value>
+        <value>classpath:reconn-config-prod.properties</value>
+        <value>classpath:mmpivot.properties</value>
+        </list>
+    </property>
+    </bean>
+
+	<!-- Email support -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${host}" />
+		<property name="port" value="${port}" />
+		<property name="protocol" value="${protocol}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="javaMailProperties">
+			<util:properties location="classpath:javamail.properties" />
+		</property>
+	</bean>
+	
+	<!--  Raj: Start --> 
+	
+	<bean id="transactionManagerCustexoHeliosOwn"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactorycustexoHeliosOwn" />
+	</bean>
+	
+	<!--  bean id="dataSourceCustexoHeliosOwn" class="com.p6spy.engine.spy.P6DataSource"
+
+                                             >
+
+    <constructor-arg>
+
+        <ref local="myDataSourceTarget"/>
+
+    </constructor-arg>
+
+</bean-->
+	
+	
+
+<bean id="dataSourceCustexoHeliosOwn" 
+		class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close" 
+		p:driverClassName="${jdbc.driverClassName}"
+		p:url="${jdbc.url}"
+		p:username="${jdbc.username}" 
+		p:password="${jdbc.password}"
+		p:accessToUnderlyingConnectionAllowed="true" />
+		
+<!--  bean id="dataSourceCustexoHeliosOwnDev" 
+		class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close" 
+		p:driverClassName="oracle.jdbc.driver.OracleDriver"
+		p:url="jdbc:oracle:thin:@exafn01dbadm01.staples.com:51521/CSTXPRF"
+		p:username="helios_own" 
+		p:password="helios201p"
+		p:accessToUnderlyingConnectionAllowed="true" /-->
+			
+		
+	<bean id="hibernateProps"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="properties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.generate_statistics" >true</prop>
+				<prop key="hibernate.default_schema">HELIOS_OWN</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> <prop key="hibernate.c3p0.minPoolSize">5</prop> 
+					<prop key="hibernate.c3p0.maxPoolSize">20</prop> <prop key="hibernate.c3p0.idleTestPeriod">300</prop> 
+					<prop key="hibernate.c3p0.timeout">600</prop> <prop key="hibernate.c3p0.max_statement">50</prop> 
+					<prop key="hibernate.c3p0.testConnectionOnCheckout">false</prop> <prop key="hibernate.c3p0.preferredTestQuery">select 
+					1;</prop> -->
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManagerCustexoSDC"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactorycustexoSDC" />
+	</bean>
+	
+	
+	  <bean id="sessionFactorycustexoHeliosOwnDev"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSourceCustexoHeliosOwn" 
+		p:hibernateProperties-ref="hibernateProps">
+		<property name="packagesToScan">
+		 <list> <value>com.staples.dashboard</value> </list>
+		 </property> 
+	</bean>
+	
+	<bean id="sessionFactorycustexoHeliosOwn"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSourceCustexoHeliosOwn" 
+		p:hibernateProperties-ref="hibernateProps">
+		<property name="packagesToScan">
+		 <list> <value>com.staples.dashboard</value> </list>
+		 </property> 
+	</bean>
+	
+	<!-- Created Session factory object for custex-o1 user. It may not required.. use existing one itself -->
+	
+	<bean id="sessionFactorycustexoSDC"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSourceCustexoHeliosOwn" 
+		p:hibernateProperties-ref="hibernateProps">
+		<property name="packagesToScan">
+		 <list> <value>com.staples.dashboard</value> </list>
+		 </property> 
+	</bean>
+	
+	
+	<!--  Raj: End --> 
+<!-- <bean id="userRoleService"
+		class="com.staples.dashboard.app.service.UserRoleService">
+		</bean>
+<bean id="userRoleDAO"
+		class="com.staples.dashboard.app.dao.UserRoleDAO">
+		</bean> -->
+		
+		
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">  
+		<property name="dataSource" ref="dataSourceCustexoHeliosOwn"></property>  
+	</bean>
+		
+
+ 
+	<bean id="namedParameterJdbcTemplate"   
+	 class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">  
+	<constructor-arg ref="dataSourceCustexoHeliosOwn"></constructor-arg>  
+	</bean>  
+		
+		<!-- Initialization for TransactionManager -->
+   <bean id="transactionManager" 
+      class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+      <property name="dataSource"  ref="dataSourceCustexoHeliosOwn" />    
+   </bean>
+   
+   
+		
+</beans>

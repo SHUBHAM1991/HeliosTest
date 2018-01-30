@@ -1,0 +1,64 @@
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="MainLogFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/Priya-Track3/logs/RewardsPB.log" />
+		<param name="Threshold" value="DEBUG" />
+		<param name="MaxFileSize" value="30MB" />
+		<param name="MaxBackupIndex" value="15" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYY-MM-dd HH:mm:ss:SSS z}| %c{2}| %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="TimingLogFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/Priya-Track3/logs/RewardsPB-Timing.log" />
+		<param name="MaxFileSize" value="30MB" />
+		<param name="MaxBackupIndex" value="20" />
+		<param name="Threshold" value="DEBUG" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYY-MM-dd HH:mm:ss:SSS z}|%c{2}| %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="ReqResLogFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="C:/Priya-Track3/logs/RewardsPB-Req-Res.log" />
+		<param name="MaxFileSize" value="30MB" />
+		<param name="MaxBackupIndex" value="20" />
+		<param name="Threshold" value="INFO" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{YYYY-MM-dd HH:mm:ss:SSS z}|%c{2}| %m%n" />
+		</layout>
+	</appender>
+
+	<Logger name="com.staples" level="DEBUG">
+		<AppenderRef ref="MainLogFile" />
+	</Logger>
+
+	<logger name="org.springframework">
+		<level value="off" />
+	</logger>
+
+	<logger name="org.springframework.security">
+		<level value="off" />
+	</logger>
+
+	<logger name="org.thymeleaf">
+		<level value="off" />
+	</logger>
+
+	<logger name="Timing">
+		<level value="DEBUG" />
+		<appender-ref ref="TimingLogFile" />
+	</logger>
+
+	<logger name="ReqRes">
+		<level value="INFO" />
+		<appender-ref ref="ReqResLogFile" />
+	</logger>
+
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="MainLogFile" />
+	</root>
+</log4j:configuration>

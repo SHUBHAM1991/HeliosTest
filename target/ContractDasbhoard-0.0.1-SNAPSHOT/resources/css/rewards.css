@@ -1,0 +1,378 @@
+/* Fonts ******************************** */
+@font-face {
+	font-family:"HelveticaNeueW01-UltLt";
+	src:url("webfonts/41774233-b9da-44be-b252-6a7b612fb1c7.eot?#iefix");
+	src:url("webfonts/41774233-b9da-44be-b252-6a7b612fb1c7.eot?#iefix") format("eot"),url("webfonts/4bff1fbb-b4bf-4d95-9c47-efcb14384e36.woff") format("woff"),url("webfonts/7f1f2a7d-3837-4c93-b373-f03c5da3f9a1.ttf") format("truetype"),url("webfonts/d9f2752a-8d82-4cf1-b82f-109c1105be7f.svg#d9f2752a-8d82-4cf1-b82f-109c1105be7f") format("svg");
+	}
+
+@font-face {
+	font-family: "HelveticaNeueLTStd-Thin";
+	src:url("webfonts/56be84de-9d60-4089-8df0-0ea6ec786b84.eot?#iefix");
+	src:url("webfonts/56be84de-9d60-4089-8df0-0ea6ec786b84.eot?#iefix") format("eot"),url("webfonts/50d35bbc-dfd4-48f1-af16-cf058f69421d.woff") format("woff"),url("webfonts/278bef59-6be1-4800-b5ac-1f769ab47430.ttf") format("truetype"),url("webfonts/2e309b1b-08b8-477f-bc9e-7067cf0af0b3.svg#2e309b1b-08b8-477f-bc9e-7067cf0af0b3") format("svg");
+	}
+
+@font-face {
+	font-family: "HelveticaNeueLTStd-Light";
+	src:url("webfonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix");
+	src:url("webfonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix") format("eot"),url("webfonts/530dee22-e3c1-4e9f-bf62-c31d510d9656.woff") format("woff"),url("webfonts/688ab72b-4deb-4e15-a088-89166978d469.ttf") format("truetype"),url("webfonts/7816f72f-f47e-4715-8cd7-960e3723846a.svg#7816f72f-f47e-4715-8cd7-960e3723846a") format("svg");
+	}
+
+@font-face {
+	font-family: "HelveticaNeueLTStd-Roman";
+	src:url("webfonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix");
+	src:url("webfonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix") format("eot"),url("webfonts/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff") format("woff"),url("webfonts/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf") format("truetype"),url("webfonts/da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg#da09f1f1-062a-45af-86e1-2bbdb3dd94f9") format("svg");
+	}
+
+@font-face {
+	font-family:"HelveticaNeueW01-65Medi";
+	src:url("webfonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot?#iefix");
+	src:url("webfonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot?#iefix") format("eot"),url("webfonts/60be5c39-863e-40cb-9434-6ebafb62ab2b.woff") format("woff"),url("webfonts/4c6503c9-859b-4d3b-a1d5-2d42e1222415.ttf") format("truetype"),url("webfonts/36c182c6-ef98-4021-9b0d-d63122c2bbf5.svg#36c182c6-ef98-4021-9b0d-d63122c2bbf5") format("svg");
+	}
+
+@font-face {
+	font-family: "HelveticaNeueLTStd-Bold";
+	src:url("webfonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix");
+	src:url("webfonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix") format("eot"),url("webfonts/14ff6081-326d-4dae-b778-d7afa66166fc.woff") format("woff"),url("f/8fda1e47-19be-46c7-8d83-8d4fb35572f0.ttf") format("truetype"),url("webfonts/f751c8ae-1057-46d9-8d74-62592e002568.svg#f751c8ae-1057-46d9-8d74-62592e002568") format("svg");
+	}
+
+@font-face {
+	font-family:"HelveticaNeueW01-85Heav";
+	src:url("webfonts/bb37f770-d450-4f24-af2b-3a81bf640315.eot?#iefix");
+	src:url("webfonts/bb37f770-d450-4f24-af2b-3a81bf640315.eot?#iefix") format("eot"),url("webfonts/a0d9d2cb-f057-4e8d-a957-27853630f58e.woff") format("woff"),url("webfonts/54085041-5049-4b91-939c-49980c66abab.ttf") format("truetype"),url("webfonts/7a48747c-74f2-49a8-bb65-1c522d4aa618.svg#7a48747c-74f2-49a8-bb65-1c522d4aa618") format("svg");
+	}
+
+@font-face {
+	font-family:"HelveticaNeueW01-95Blac";
+	src:url("webfonts/b26ccb58-f2e3-47aa-a83a-02861bf54862.eot?#iefix");
+	src:url("webfonts/b26ccb58-f2e3-47aa-a83a-02861bf54862.eot?#iefix") format("eot"),url("webfonts/74649485-cd74-443e-9d54-331ccd448900.woff") format("woff"),url("webfonts/feb77f4f-9e6b-4f88-909a-66199fd402ed.ttf") format("truetype"),url("webfonts/2e490192-e531-4236-9c55-90daaad4a34e.svg#2e490192-e531-4236-9c55-90daaad4a34e") format("svg");
+	}
+
+
+body {font:13px  Arial, Helvetica, sans-serif; color:#4d4d4d;}
+header, nav, section, article, aside, footer {display:block;}
+a {color: #0092db; text-decoration:none;}
+a:hover {text-decoration:underline;}
+ul {margin:0; padding:0;}
+p {padding:0; margin:0;}
+p.margin {margin:.5em 0;}
+table {width:100%; border-collapse:collapse;}
+fieldset {border:0; margin:0; padding:1% 0;}
+sup {font-size:50%;}
+textarea {font:12px Arial, Helvetica, Sans-serif;}
+
+.bg-eee {background:#eee;}
+
+.hide {display:none !important;}
+.center {text-align:center;}
+.right {text-align:right;}
+.grey {color:#c2c2c2;}
+.red {color:#c00;}
+.bold {font-weight:bold;}
+.clr {clear:both;}
+.p5 {padding:7px;}
+.border-bottom {border-bottom:1px solid #e2e2e2;}
+.stp-Dashed-Bottom {border-bottom: 1px dashed #c2c2c2;}
+.stp-Dashed-Top {border-top: 1px dashed #c2c2c2;}
+.big {font-size:18px;}
+.small {font-size:12px;}
+.mt1 {margin-top:1em;}
+.m1 {margin:1em 0;}
+
+.td20 {width:28%;}
+.td33 {width:33%;}
+
+.stp-Radio {display:inline-block; vertical-align:top}
+
+.stp-Header {white-space: nowrap; font:16px 'HelveticaNeueLTStd-Light',Arial,Helvetica,sans-serif; text-transform:uppercase;}
+.stp-Header-Icon {background:url('../img/icons_dashboard.png') 0 3px no-repeat; padding:1px 0 1px 26px; white-space: nowrap; font:16px 'HelveticaNeueLTStd-Light',Arial,Helvetica,sans-serif; text-transform:uppercase;}
+.stp-Header-Account-Profile {background-position:0 3px;}
+.stp-Header-YTD-Summary {background-position:0 -112px;}
+.stp-Header-Ink-Toner {background-position:0 -90px;}
+.stp-Header-Redeemable-Rewards {background-position:0 -20px;}
+.stp-Header-Quick-Links {background-position:0 -44px;}
+.stp-Header-Rewards-Summary {background-position:0 -68px;}
+.stp-Header-Hide {text-indent:-9999px;}
+.stp-Header-Img-Reward-Classroom {background:url('../img/reward_a_classroom.gif') 0 0 no-repeat; background-position:0 0px; padding:10px 0; margin:-7px 0 0 0;}
+
+.stp-Button {display:inline-block; font-size:9pt; text-transform:uppercase; color:#fff; padding:.75em; text-align:center; margin:0 10px 0 0px; border:0;}
+.stp-Button:hover { text-decoration:none;}
+.stp-Grey-Button {background-color:#666;}
+.stp-Grey-Button:hover {background-color:#1b1b1b;}
+.stp-Red-Button {background-color:#c00}
+.stp-Red-Button:hover {background-color:#8c0000;}
+
+.stp-Button-Container {margin-top:1.5em; float:left; width:100%;}
+.stp-Button-Container .left {float:left;}
+.stp-Button-Container .right {float:right;}
+
+.stp-Rewards-MemberLogo {margin-bottom:1em;}
+.stp-Main-Container {width:940px; margin:0 auto;}
+
+.stp-Promo-Banner-Header {clear:both; color:#FFF; height:91px; background:#C00; margin-bottom:.5em; background:url('../img/banner.jpg');}
+.stp-Promo-Banner-Footer {clear:both; color:#FFF; height:91px; background:#C00; margin-top:50px; background:url('../img/banner.jpg');}
+.stp-Notifications {background:rgb(225,245,255); font-size:12px; margin:20px 0; padding:5px; float:left; width:100%;}
+.stp-Notifications-Error-Block {color:#c00;}
+
+
+
+.stp-No-Rewards-Available {color:#c2c2c2;}
+h1 {font:34px 'HelveticaNeueLTStd-Thin',Arial,Helvetica,sans-serif; font-weight:normal; margin:.5em 0;}
+h2 {font:24px 'HelveticaNeueLTStd-Light',Arial,Helvetica,sans-serif; font-weight:normal; margin:2em 0 .5em;}
+h3 {font:20px 'HelveticaNeueLTStd-Light',Arial,Helvetica,sans-serif; font-weight:normal; margin:1em 0 .5em;}
+h4 {font:18px 'HelveticaNeueLTStd-Roman',Arial,Helvetica,sans-serif; font-weight:normal; margin:.5em 0;}
+.rewards-price {font:18px 'HelveticaNeueLTStd-Bold',Arial,Helvetica,sans-serif; color:#c00;}
+
+.stp-Grid {display:block; float:left; vertical-align:top; margin:0; padding:0;
+    width: 326px;
+}
+.stp-Grid25 {width:25%;
+    height: 250px;
+}
+stp-Grid30 {width:30%;}
+stp-Grid38 {width:38%;}
+.stp-Grid33 {width:33%;
+   
+}
+.stp-Grid30 {width:30%;}
+.stp-Grid50 {width:50%;
+    height: 250px;
+}
+.stp-Grid66 {width:66%;}
+.stp-Grid61 {width:61%;}
+.stp-Grid75 {width:75%;}
+.stp-Grid100 {width:100%;}
+
+.stp-Rewards-Container {padding:0; white-space:normal; border-top:1px solid #c2c2c2;}
+.stp-Rewards-Container p {margin:1em 0;}
+.stp-Rewards-Container ul {margin:0; padding:0 0 0.5em;}
+ul.actuallyalist, .stp-Rewards-Container ul.actuallyalist {margin:0 0 0 2em; list-style-type:disc;}
+.stp-Rewards-Container ul.stp-Top-Dashed-Border {border-top: 1px dashed #C2C2C2; padding:.5em 0 0;}
+.stp-Rewards-Container ul li {margin:.25em 0;}
+.stp-Rewards-Container-Border table tr {border-bottom:1px dashed #c2c2c2;}
+.stp-Rewards-Container-Border table td {padding:1% 0}
+
+.stp-Rewards-Summary-Graph-Container {margin-bottom:2em;}
+
+.stp-Rewards-Container-Border {border:1px solid #c2c2c2; padding:0; min-height:150px;}
+.stp-Rewards-Container-Border p {padding:1% 10px;}
+.stp-Rewards-Container-Border h4 {padding:1% 10px; font-size:16px;}
+
+p.stp-More-Link {margin:.25em 0;padding:0 10px;}
+
+.stp-Container-Row {margin:0 0 1em; clear:both; float:left; width:100%;}
+
+
+.stp-Rewards-Table-Filters .stp-Table-Left-Filters {float:left; }
+.stp-Rewards-Table-Filters .stp-Table-Right-Filters {float:right; text-align:right;}
+
+.stp-Rewards-Table {border-collapse:collapse; width:100%; clear:both;}
+.stp-Rewards-Table thead {background-color:#f5f5f5;}
+.stp-Rewards-Table tfoot {font-size:14px; font-weight:bold;}
+.stp-Rewards-Table td {padding:0.5em;}
+.stp-Rewards-Table .center {padding:1% 0;}
+.stp-Rewards-Table tr.top td {vertical-align:top;}
+
+.stp-Rewards-Dashed tr {border-bottom:1px dashed #e2e2e2;}
+.stp-Rewards-Dashed td {padding:.5em;}
+.stp-Rewards-Dashed thead td {padding:1em .5em;}
+
+.stp-Rewards-Solid {border:1px solid #c2c2c2; }
+.stp-Rewards-Solid td {padding:1% .5%; border:1px solid #eee;}
+
+.stp-QuickLinks-List {list-style-type:none;}
+.stp-QuickLinks-List li {padding:.25em 0;}
+.stp-QuickLinks-List a {text-decoration:none; color:#4d4d4d;}
+.stp-QuickLinks-List a:hover {text-decoration:underline; color:#0092db;}
+
+.stp-Rewards-Legend {margin:2em 0 0 0;}
+.stp-Rewards-Legend-Item {display:inline-block; margin-left:.5em;}
+.stp-Rewards-Icon-StaplesRewards {background:url("../img/purchasedetail_icon_key_srewards.png") 0 0 no-repeat; padding-left:20px;}
+.stp-Rewards-Icon-SpecialEvents {background:url("../img/purchasedetail_icon_key_sevents.png") 0 0 no-repeat; padding-left:20px;}
+.stp-Rewards-Icon-InkRecyclingRewards {background:url("../img/purchasedetail_icon_key_inkrewards.png") 0 0 no-repeat; padding-left:20px;}
+
+.stp-Rewards-Purchase-Details {width:100%; border-bottom:1px solid #bbb; }
+.stp-Rewards-Accordion-Info-Btn {display:block; color:#4d4d4d; padding:0.9em 20px 0.9em 0; background:url(../img/headerfooter.png) no-repeat; background-position:right -279px;}
+.stp-Rewards-Accordion-Info-Btn:hover {text-decoration:none;}
+.stp-Rewards-Accordion-Info-Btn span {display:inline-block;}
+.stp-Rewards-Accordion-Info-Btn.active {background-position:right -304px; text-decoration:none;}
+.stp-Rewards-Purchase-Details-OrderDate {width:15%;}
+.stp-Rewards-Purchase-Details-OrderNum {width:25%;}
+.stp-Rewards-Purchase-Details-OrderNum2 {width:10%;}
+.stp-Rewards-Purchase-Details-Total {width:20%;}
+.stp-Rewards-Purchase-Details-Earned {width:25%;}
+
+.stp-Rewards-Purchase-Details-Info {background:#eee; padding:.5em 2em; font-weight:bold;}
+.stp-Rewards-Purchase-Details-Filter-Head {background:#eee; border-bottom:1px solid #bbb; width:100%; float:left;}
+.stp-Accordion-Block {display:none;}
+.stp-Fine-Print {margin:10em 0 1em; float:left; clear:both; font-size:8pt; color:#CCC; white-space:normal;}
+
+.bcrumb {color:#999;}
+.bcrumb a {background: url(../img/bg_more-less-arrows.gif) right -48px no-repeat; padding:0 12px 0 0; color:#999;}
+
+
+.stp-Overlay {position:fixed; top:0; left:0; width:100%; min-width:100%; height:100%; min-height:100%; background-color:rgba(33, 33, 33, 0.6); z-index:1000;}
+.stp-Popup-Container {position:fixed; top:0%; width:100%; z-index:2000; height:100%;}
+.stp-Popup {margin:0 auto; top:10%; min-width:50%; width:50%; background:#fff; border-radius:3px; padding:1em; position:relative; padding:1em; min-height:150px; max-height:75%; overflow-y:auto;}
+.stp-Popup h2 {margin: 1em 0;}
+.stp-Popup .stp-Profile-Table {margin:1em 0;}
+.stp-Popup .stp-Button-Container {text-align:center; margin-top:1em; float:none;}
+.stp-Popup label {display:inline-block; width:25%;}
+
+.stp-Popup-Button {display:block; position:absolute; top:0; right:5%; padding:.5em; font-size:10px; background:#999; color:#fff;}
+
+.stp-Tabs .stp-Tab-Panel {clear:both; float:left; margin:2em 0 0 0; position:relative;}
+.stp-Tabs .stp-Tabs-Button-Container {width:100%; margin:1em 0 0; float:left; border-bottom:1px solid #e2e2e2;}
+.stp-Tabs .stp-Tabs-Button-Container ul {list-style-type:none; float:left; margin:0 0 0 1px;}
+.stp-Tabs .stp-Tabs-Button-Container ul li {display:block; float:left}
+.stp-Tabs .stp-Tabs-Button-Container ul li a {display:block; padding:1em 2em; font-size:16px; color:#4d4d4d; border:1px solid #e2e2e2; border-top:0; border-bottom:0; margin:0 0 0 -1px;}
+.stp-Tabs .stp-Tabs-Button-Container ul li a:hover {color:#0092db; text-decoration:none}
+.stp-Tabs .stp-Tabs-Button-Container ul li a.active {color:#c00;}
+
+.stp-Rewards-Classroom-Container .left {width:50%; float:left;}
+.stp-Rewards-Classroom-Container .right {width:25%; float:right;}
+
+.stp-Rewards-Card-Display-Block {margin:1em; padding:1em; border:3px solid #FC0; height:250px; position:relative;}
+.stp-Rewards-Card-Display-Block .left {float:left; padding:10px;}
+.stp-Rewards-Card-Display-Block .right {float:right; padding:10px;}
+.stp-Rewards-Card-Display-Block .bottom {position:absolute; bottom:0; width:100%; margin:1em 0;}
+
+.stp-Rewards-Check {border:3px solid #CCC; width:656px; padding:6px; min-height:326px; font-size:18px; position:relative; background:url('../img/RewardsCheckBanner/bg.gif') repeat-x 0 104px;}
+.stp-Rewards-Check-Banner {position:absolute; width:100%; height:104px;}
+.stp-Rewards-Check .stp-Rewards-Check-Price-Container {position:absolute; top:75px; right:20px; }
+.stp-Rewards-Check .stp-Rewards-Check-Price {border:1px solid #C00; padding:16px; background:#FFF; text-align:center; }
+.stp-Rewards-Check .stp-Rewards-Check-Price-Value {font-size:28px;}
+.stp-Rewards-Check .stp-Rewards-Check-Price-Date {font-size:10px; color:#4d4d4d}
+.stp-Rewards-Check .stp-Rewards-Check-Expires {font-size:12px; text-align:right; }
+.stp-Rewards-Check .stp-Rewards-Check-User-Info {margin-top:110px; padding:10px; color:#4d4d4d; font-weight:bold;}
+.stp-Rewards-Check .stp-Rewards-Check-User-Info p.margin {margin: 1em 0;}
+.stp-Rewards-Check .stp-Rewards-Check-Barcode {position:absolute; right:1em; top:240px; width:245px; font-size:12px; text-align:center;}
+.stp-Rewards-Check .stp-Rewards-Check-Table {width:100%; font-size:14px; margin-top:1em;}
+.stp-Rewards-Check .stp-Rewards-Check-Table thead {background:#666; color:#fff;}
+.stp-Rewards-Check .stp-Rewards-Check-Table th {width:20%; background-color:#fff;}
+.stp-Rewards-Check .stp-Rewards-Check-Table th.red {width:20%; background-color:#c00; color:#fff;}
+.stp-Rewards-Check .stp-Rewards-Check-Table td {border:1px solid #CCC; padding:.25em;}
+
+.stp-Rewards-Coupon {border:3px solid #CCC; width:656px; min-height:250px; font-size:14px; padding:6px; position:relative; /*background:url('../img/RewardsCheckBanner/bg.gif') repeat-x 0 0px;*/}
+.stp-Rewards-Coupon .stp-Rewards-Coupon-Expires {background:#fff; padding:0.25em; margin:0 auto;}
+.stp-Rewards-Coupon .stp-Rewards-Coupon-Expires p {display:inline-block; width:48%; padding:.25em; border:1px solid #c2c2c2;}
+.stp-Rewards-Coupon .stp-Rewards-Coupon-Details {}
+.stp-Rewards-Coupon .stp-Rewards-Coupon-Logo {display:inline-block; vertical-align:middle; width:100px; height:100px; padding:20px; background:url('../img/coupon_staples_logo.png') no-repeat center center;}
+.stp-Rewards-Coupon .stp-Rewards-Coupon-Percent {display:inline-block; vertical-align:middle; width:50%; font: 48px "HelveticaNeueW01-85Heav", Arial, Helvetica, sans-serif;}
+.stp-Rewards-Coupon .stp-Rewards-Coupon-Barcode {display:inline-block;vertical-align:middle; font-size:11px;}
+.stp-Rewards-Coupon .stp-Rewards-Coupon-Actions-Container {border-top:1px solid #c2c2c2; margin-top:.5em; padding:.5em;}
+.stp-Rewards-Coupon .stp-Rewards-Coupon-Actions {float:left; padding:.5em;}
+
+.stp-Rewards-Coupon-Used {background:url('../img/mini_coupons_bg_used.png') no-repeat 0 0; width:75%; height:100px; text-align:center; color:#4d4d4d;}
+.stp-Rewards-Coupon-Used h2 {padding:1.5em 0;}
+
+.stp-Form-Label {display:inline-block; width:35%;}
+.stp-Form-Input-Block {margin:0.5em 0;}
+.stp-Form-Zip {width:5em;}
+.stp-Form-Zip4 {width:4em;}
+.stp-Form-Phone1 {width:3em;}
+.stp-Form-Phone2 {width:3em;}
+.stp-Form-Phone3 {width:4em;}
+.stp-Form-PhoneExt {width:4em;}
+.stp-Rewards-Input-Hint {color:#999; font-size:12px;}
+.stp-Form-Input-Block .stp-Form-Label-Ext {width:10%;}
+.stp-Form-Error label {color:#c00; }
+.stp-Form-Error input {border:1px solid #c00;}
+
+.stp-Pagination { font:14px "HelveticaNeueLTStd-Roman",Arial,Helvetica,sans-serif;}
+.stp-Pagination ul {list-style-type:none; float:left; line-height:2em;}
+.stp-Pagination li {display:block; float:left;}
+.stp-Pagination li a {padding:0 0.5em 0 0; color:#4d4d4d;}
+.stp-Pagination li a:hover {color:#0092db; text-decoration:none;}
+.stp-Pagination li.active a {color:#c00;}
+.stp-Pagination li.disabled a {color:#c2c2c2;}
+
+.stp-Rewards-Info-Blurb {border-top:1px solid #c2c2c2; margin:4em 0 0 0; height:222px; width:100%; padding:2em 0 0 0;}
+
+.stp-Recycle-Ink-Toner-Icon {background:url('../img/ship-label.png') no-repeat 0 0; width:300px; height:200px; position:absolute; top:54px; right:0;}
+.stp-Recycle-Ink-Find-Store {background:url('../img/staples-store.jpg') no-repeat 0 0;}
+.stp-Recycle-Ink-Find-Store .blurb {width:40%; margin:0 0 0 350px;}
+.stp-Recycle-Ink-When-You-Arrive {background:url('../img/store-associate-and-customer.jpg') no-repeat right 0; margin:4em 0 0 0; height:230px; width:100%;}
+.stp-Recycle-Ink-When-You-Arrive .blurb {width:40%; margin:0 350px 0 20px;}
+.stp-Recycle-Ink-Cartridge-Select {background:url('../img/ink-recycle/ink-bg-new.png') no-repeat 0 0;}
+.stp-Recycle-Ink-Cartridge-Select .blurb {width:50%; margin:0 0 0 150px;}
+.stp-Recycle-Ink-Toner-Cartridge-Select {background:url('../img/ink-recycle/toner-bg-new.png') no-repeat 0 0;}
+.stp-Recycle-Ink-Toner-Cartridge-Select .blurb {width:50%; margin:0 0 0 150px; }
+
+.stp-Tooltip-Container {position:relative;}
+.stp-Tooltip {padding:1em; background-color:#eee; position:absolute; z-index:100;}
+.stp-Tooltip-Selection {padding:1em; background-color:#eaf6d2; position:absolute; z-index:200;}
+.stp-Rewards-Ink-Label-Selected-Buttons {background-color:#eaf6d2; width:130%;}
+.stp-Rewards-Ink-Label-Selected-Buttons.active {width:158%;}
+.stp-Rewards-Ink-Label-Selected-Buttons p {display:inline-block; padding:0 1em; }
+
+.stp-Add-Receipt-Barcode-Img {background:url('../img/barcode.png') no-repeat 0 0; width:181px; height:113px;}
+
+.stp-Rewards-Add-Receipt-Selection-Header label {display:block; background:#eee; padding:1em; width:100%;}
+.stp-Order-Num1 {width:7em;}
+.stp-Order-Num2 {width:4em;}
+
+.stp-FAQ {}
+.stp-FAQ h4 {display:inline-block; width:auto;}
+.stp-FAQ a {display:block; padding:0.5em; color:#4d4d4d;}
+.stp-FAQ a span {display:inline-block; background:url('../img/arrow_closed.png') no-repeat right 8px; width:20px; height:20px;}
+.stp-FAQ a:hover {color:#0092db;}
+.stp-FAQ a:hover span {background-image:url('../img/arrow_closed_blue.png');}
+.stp-FAQ a.active {}
+.stp-FAQ a.active span {background-image:url('../img/arrow_open.png');}
+
+.stp-FAQ .stp-FAQ-ishelpful {padding:.5em 0; border-top:1px solid #ccc;}
+.stp-FAQ .stp-FAQ-ishelpful a {display:inline; padding:0; margin:0; color:#0092db;}
+.stp-FAQ .stp-FAQ-ishelpful a:hover {display:inline; padding:0; margin:0; text-decoration:underline;}
+
+.stp-FAQ ul.stp-Accordion {list-style-type:none;}
+.stp-FAQ ul.stp-FAQ-needhelplist a {color:#0092db;}
+.stp-FAQ .stp-Answer {display:none;}
+
+.stp-FAQ .stp-FAQ-contact-form label {display:inline-block; width:35%; vertical-align:top}
+.stp-FAQ .stp-FAQ-form-input-block {margin:.5em 0;}
+.stp-FAQ .stp-FAQ-form-input-block input,
+.stp-FAQ .stp-FAQ-form-input-block textarea {display:inline-block; width:50%;}
+.stp-FAQ .stp-FAQ-form-input-block textarea {height:10em;}
+.stp-FAQ .stp-FAQ-form-input-block input.disabled {background:none; border:0; color:#999;}
+.stp-FAQ .stp-FAQ-form-charcount-container {width:85%; text-align:right; }
+
+.stp-Rewards-Benefits-Graph {float:none; width:100%; height:170px; position:relative; margin:1em 0 0 0;}
+.stp-Rewards-Benefits-Graph .stp-Legend {font: 14px 'HelveticaNeueLTStd-Thin'; color:#999; margin:0; padding:0; list-style-type:none; float:left; text-align:right;}
+.stp-Rewards-Benefits-Graph .stp-Legend li {padding:0 0 1em;}
+.stp-Rewards-Benefits-Graph .stp-Legend li:after {content:'-';}
+.stp-Rewards-Benefits-Graph .stp-Graph-Container {margin:12px 0 0; padding:0 10px; width:40px; height:100%; position:relative; float:left; border:1px solid #999; border-top:0; border-right:0;}
+.stp-Rewards-Benefits-Graph .stp-Graph-Container .stp-Graph-BG {position:absolute; width:50px; bottom:0; height:100%; background-color:#eaf6d2; }
+.stp-Rewards-Benefits-Graph .stp-Graph-Container .stp-Graph-Value {position:absolute; bottom:0; height:0%; width:50px; background-color:#88c697;}
+
+.stp-Office-on-the-Go-Infographic {background:url('../img/infographic_office_on_the_go.jpg') no-repeat; height:221px; width:671px; margin:1em auto;}
+.stp-Office-on-the-Go-Status .stp-Office-on-the-Go-Unused {background:#eaf6d2; color:#4d4d4d; padding:1em 0; text-align:center; width:671px; margin:0 auto;}
+.stp-Office-on-the-Go-Status .stp-Office-on-the-Go-Complete {background:#eaf6d2; color:#4d4d4d; padding:1em 0; text-align:center; width:671px; margin:0 auto;}
+.stp-Office-on-the-Go-Status .stp-Office-on-the-Go-InProgress {width:671px; margin:0 auto; text-align:center;}
+.stp-Office-on-the-Go-Status .stp-Office-on-the-Go-InProgress li {background:#eaf6d2; color:#4d4d4d; display:block; float:left; margin-right:21px; width:152px; padding:1em 0; text-transform:uppercase;}
+.stp-Office-on-the-Go-Status .stp-Office-on-the-Go-InProgress li:last-child {margin-right:0;}
+.stp-Office-on-the-Go-Status .stp-Office-on-the-Go-InProgress li .rewards-price {font-size:24px; color:#88c697;}
+
+.stp-Design-Services-Infographic {background:url('../img/infographic_design_services.jpg') no-repeat; height:327px; width:671px; margin:1em auto; position:relative;}
+.stp-Design-Services-Infographic .stp-Design-Services-Spend {position:absolute; right:0; top:180px; width:125px; height:80px; padding:2em 0 0 0; font-size:24px; color:#88c697; text-align:center; font-weight:bold;}
+.stp-Design-Services-Infographic .stp-Design-Services-Status {position:absolute; bottom:0; width:100%; text-align:center; padding:0.5em 0;}
+
+.stp-Rewards-About-Grid {margin:0 auto; width:100%;}
+.stp-Rewards-About-Grid tr {border-bottom:1px solid #ccc;}
+.stp-Rewards-About-Grid .yes {color:#c00; font-size:64px; line-height:.5em; text-align:center;}
+.stp-Rewards-About-Block {width:100%; border-bottom:1px solid #ccc}
+.stp-Rewards-About-Text {width:50%;}
+.stp-Rewards-About-Header {padding:2em 0;border-bottom:1px solid #ccc}
+.stp-Rewards-About-Free-Shipping {height:300px; background:url('../img/benefits_5_back_free_shipping.jpg') no-repeat right bottom;}
+.stp-Rewards-About-Bonus-Events {height:175px; background:url('../img/benefits_bonus_events.jpg') no-repeat right bottom;}
+.stp-Rewards-About-Ink-Recycling {height:240px; background:url('../img/benefits_ink_recycling_rewards.png') no-repeat right bottom; border-bottom:0;}
+.stp-Rewards-About-Office-on-the-Go {height:300px; background:url('../img/benefits_office_on_the_go.jpg') no-repeat right bottom;}
+.stp-Rewards-About-EasyTech-Services {height:300px; background:url('../img/benefits_free_easytech_services.png') no-repeat right bottom;}
+.stp-Rewards-About-Design-Services {height:300px; background:url('../img/benefits_design_services.jpg') no-repeat right bottom;}
+.stp-Rewards-About-Copy-Print-Discount {height:300px; background:url('../img/benefits_copy_and_print_instant_discount.png') no-repeat right bottom;}
+.stp-Rewards-About-Exclusive-Bonus-Events {height:175px; background:url('../img/benefits_premier_exclusive_bonus_events.jpg') no-repeat right bottom;}
+.stp-Rewards-About-Double-Redeem {height:240px; background:url('../img/doubletime283x260.png') no-repeat right bottom;}
+.stp-Rewards-About-Extra-Teaching {height:225px; background:url('../img/benefits_an_extra_five_back_in_rewards.png') no-repeat right bottom;}
+
+
+.stp-Rewards-EasyTech-Installation {height:300px;/* background:url('../img/easytech_services_set_up_and_install_services.jpg') no-repeat right bottom;*/}
+.stp-Rewards-EasyTech-Training {height:300px; background:url('../img/easytech_services_one_on_one_services.png') no-repeat right bottom;}
